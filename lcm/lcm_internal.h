@@ -49,10 +49,15 @@ int lcm_parse_url(const char *url, char **provider, char **target, GHashTable *a
  * all the subscribers' queues are full.  The actual message contents are not
  * enqueued here, only a placeholder for the message.
  */
+#ifdef __cplusplus
+extern "C" {
+#endif
 int lcm_try_enqueue_message(lcm_t *lcm, const char *channel);
 
 int lcm_has_handlers(lcm_t *lcm, const char *channel);
 
 int lcm_dispatch_handlers(lcm_t *lcm, lcm_recv_buf_t *buf, const char *channel);
-
+#ifdef __cplusplus
+}
+#endif
 #endif

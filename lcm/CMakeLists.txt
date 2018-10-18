@@ -10,6 +10,7 @@ set(lcm_sources
   lcm_mpudpm.c
   lcm_tcpq.c
   lcm_udpm.c
+  lcm_udp.c
   ringbuffer.c
   udpm_util.c
   lcmtypes/channel_port_map_update_t.c

@@ -6,7 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+//#include <unistd.h>
+#define F_OK 0
 #ifdef WIN32
 #define __STDC_FORMAT_MACROS  // Enable integer types
 #endif
@@ -619,7 +620,7 @@ static void emit_go_lcm_imports(FILE *f, lcmgen_t *lcm, lcm_struct_t *ls)
             continue;
 
         int imported = FALSE;
-        for (int j = i - 1; j >= 0; j--) {
+        for (int j = i - 1; j > 0; j--) {
             lcm_member_t *lm_ = (lcm_member_t *) g_ptr_array_index(ls->members, j);
 
             if (strcmp(lm->type->package, lm_->type->package) == 0)
