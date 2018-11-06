@@ -41,43 +41,43 @@ endif()
 # Documentation (Main, C/C++, .NET)
 add_subdirectory(docs)
 
-# Java
-lcm_option(
-  LCM_ENABLE_JAVA
-  "Build Java bindings and utilities"
-  JAVA_FOUND Java 1.6)
-if(LCM_ENABLE_JAVA)
-  add_subdirectory(lcm-java)
-  add_custom_target(lcm-spy DEPENDS lcm-spy-alias)
-  add_custom_target(lcm-logplayer-gui DEPENDS lcm-logplayer-gui-alias)
-endif()
-
-# Python
-lcm_option(
-  LCM_ENABLE_PYTHON
-  "Build Python bindings and utilities"
-  PYTHON_FOUND Python)
-if(LCM_ENABLE_PYTHON)
-  add_subdirectory(lcm-python)
-endif()
-
-# Lua
-lcm_option(
-  LCM_ENABLE_LUA
-  "Build Lua bindings and utilities"
-  LUA_FOUND Lua)
-if(LCM_ENABLE_LUA)
-  add_subdirectory(lcm-lua)
-endif()
-
-# .NET
-# TODO
-
-# Go
-lcm_option(
-  LCM_ENABLE_GO
-  "Build Go utilities, bindings is source distributed"
-  GO_FOUND Go)
+## Java
+#lcm_option(
+#  LCM_ENABLE_JAVA
+#  "Build Java bindings and utilities"
+#  JAVA_FOUND Java 1.6)
+#if(LCM_ENABLE_JAVA)
+#  add_subdirectory(lcm-java)
+#  add_custom_target(lcm-spy DEPENDS lcm-spy-alias)
+#  add_custom_target(lcm-logplayer-gui DEPENDS lcm-logplayer-gui-alias)
+#endif()
+#
+## Python
+#lcm_option(
+#  LCM_ENABLE_PYTHON
+#  "Build Python bindings and utilities"
+#  PYTHON_FOUND Python)
+#if(LCM_ENABLE_PYTHON)
+#  add_subdirectory(lcm-python)
+#endif()
+#
+## Lua
+#lcm_option(
+#  LCM_ENABLE_LUA
+#  "Build Lua bindings and utilities"
+#  LUA_FOUND Lua)
+#if(LCM_ENABLE_LUA)
+#  add_subdirectory(lcm-lua)
+#endif()
+#
+## .NET
+## TODO
+#
+## Go
+#lcm_option(
+#  LCM_ENABLE_GO
+#  "Build Go utilities, bindings is source distributed"
+#  GO_FOUND Go)
 
 option(LCM_ENABLE_TESTS "Build unit tests" ON)
 if(LCM_ENABLE_TESTS)
